@@ -1,0 +1,324 @@
+﻿[
+	{
+		"locale": "fr",
+		"categories": [
+			{
+				"label": "rhythmology",
+				"name": "Rythmologie",
+				"scores": [
+					{
+						"label": "canadianSyncopeRisk",
+						"name": "Canadian Syncope Risk",
+						"detail": "Risque d'évènement cardiovasculaire après syncope"
+					},
+					{
+						"label": "chadsVasc",
+						"name": "CHA\u2082DS\u2082-VASc",
+						"detail": "Risque d'embolie artérielle systémique en fibrillation atriale"
+					},
+					{
+						"label": "hasBled",
+						"name": "HAS-BLED",
+						"detail": "Risque hémorragique sous traitement antithrombotique"
+					},
+					{
+						"label": "hcmRiskScd",
+						"name": "HCM Risk-SCD",
+						"detail": "Risque de mort subite dans la cardiomyopathie hypertrophique"
+					},
+					{
+						"label": "hemorrhages",
+						"name": "HEMORR\u2082HAGES",
+						"detail": "Risque hémorragique sous Warfarine chez le patient en fibrillation atriale"
+					},
+					{
+						"label": "correctedQt",
+						"name": "QT corrigé",
+						"detail": "QT corrigé à la fréquence cardiaque selon Framingham (QRS fins) ou Rautaharju (QRS larges)"
+					},
+					{
+						"label": "ventricularTachycardia",
+						"name": "Ventricular Tachycardia",
+						"detail": "Probabilité de TV devant une tachycardie à QRS larges"
+					}
+				]
+			},
+			{
+				"label": "heartFailure",
+				"name": "Insuffisance cardiaque",
+				"scores": [
+					{
+						"label": "amyloidosis",
+						"name": "Amylose cardiaque",
+						"detail": "Probabilité d'amylose cardiaque en cas d'hypertrophie ventriculaire"
+					},
+					{
+						"label": "constriction",
+						"name": "Constriction / Restriction",
+						"detail": "Diagnostic échographique entre constriction péricardique et cardiomyopathie restrictive"
+					},
+					{
+						"label": "diastolicFunction",
+						"name": "Fonction diastolique",
+						"detail": "Evaluation échographique de la fonction diastolique et des pressions de remplissages"
+					},
+					{
+						"label": "haemodynamics",
+						"name": "Hémodynamique",
+						"detail": "Calculs usuels en cathétérisme et classification de l'hypertension pulmonaire"
+					},
+					{
+						"label": "phhfGroup",
+						"name": "PH-HFpEF Group",
+						"detail": "Classification de l'hypertension pulmonaire"
+					},
+					{
+						"label": "pulmonaryHypertensionProbability",
+						"name": "Probabilité d'HTAP",
+						"detail": "Probabilité échographique d'hypertension pulmonaire"
+					},
+					{
+						"label": "qualify",
+						"name": "QUALIFY",
+						"detail": "Titration médicamenteuse dans l'insuffisance cardiaque"
+					}
+				]
+			},
+			{
+				"label": "cardiacSurgery",
+				"name": "Chirurgie cardiaque",
+				"scores": [
+					{
+						"label": "sts",
+						"name": "STS",
+						"detail": "Risque de mortalité et morbidité en cas de chirurgie cardiaque"
+					}
+				]
+			},
+			{
+				"label": "pulmonaryEmbolism",
+				"name": "Embolie pulmonaire",
+				"scores": [
+					{
+						"label": "geneva",
+						"name": "Genève",
+						"detail": "Probabilité clinique d'embolie pulmonaire"
+					},
+					{
+						"label": "pesi",
+						"name": "PESI",
+						"detail": "Gravité clinique d'une embolie pulmonaire"
+					},
+					{
+						"label": "wells",
+						"name": "Wells",
+						"detail": "Probabilité clinique d'embolie pulmonaire"
+					}
+				]
+			},
+			{
+				"label": "endocarditis",
+				"name": "Endocardite infectieuse",
+				"scores": [
+					{
+						"label": "dukesCriteria",
+						"name": "Critères de Duke",
+						"detail": "Diagnostic d'endocardite infectieuse"
+					}
+				]
+			},
+			{
+				"label": "calculations",
+				"name": "Calculs",
+				"scores": [
+					{
+						"label": "bmi",
+						"name": "IMC & Poids idéal",
+						"detail": "Calcul de l'IMC et du poids idéal pour la taille"
+					},
+					{
+						"label": "bodySurfaceArea",
+						"name": "Surface corporelle",
+						"detail": "Calcul de la surface corporelle selon la formule de Boyd"
+					},
+					{
+						"label": "clearance",
+						"name": "Clairance de la créatinine",
+						"detail": "Evaluation de la fonction rénale"
+					},
+					{
+						"label": "unitConversion",
+						"name": "Conversions d'unités",
+						"detail": "Convertisseur d'unités usuelles en médecine"
+					},
+					{
+						"label": "ureaExcretionFraction",
+						"name": "Fraction d'excrétion urée",
+						"detail": "Aide à comprendre le mécanisme d'insuffisance rénale aiguë"
+					}
+				]
+			}
+		]
+	},
+	{
+		"locale": "en",
+		"categories": [
+			{
+				"label": "rhythmology",
+				"name": "Rhythmology",
+				"scores": [
+					{
+						"label": "canadianSyncopeRisk",
+						"name": "Canadian Syncope Risk",
+						"detail": "Risk of cardiovascular event after syncope"
+					},
+					{
+						"label": "chadsVasc",
+						"name": "CHA2DS2-VASc",
+						"detail": "Risk of systemic thrombotic event in case of atrial fibrillation"
+					},
+					{
+						"label": "hasBled",
+						"name": "HAS-BLED",
+						"detail": "Bleeding risk under antithrombotic therapy"
+					},
+					{
+						"label": "hcmRiskScd",
+						"name": "HCM Risk-SCD",
+						"detail": "Sudden cardiac death risk in hypertrophic cardiomyopathy"
+					},
+					{
+						"label": "hemorrhages",
+						"name": "HEMORR2HAGES",
+						"detail": "Bleeding risk under Warfarin in atrial fibrillation"
+					},
+					{
+						"label": "correctedQt",
+						"name": "Corrected QT",
+						"detail": "QT corrected to heart rate according to Bazett (narrow QRS) or Rautaharju (wide QRS)"
+					},
+					{
+						"label": "ventricularTachycardia",
+						"name": "Ventricular Tachycardia",
+						"detail": "Probability of VT in case of wide QRS tachycardia"
+					}
+				]
+			},
+			{
+				"label": "heartFailure",
+				"name": "Heart failure",
+				"scores": [
+					{
+						"label": "amyloidosis",
+						"name": "Amyloidosis",
+						"detail": "Probability of cardiac amyloidosis in case of left ventricular hypertrophy"
+					},
+					{
+						"label": "constriction",
+						"name": "Constriction / Restriction",
+						"detail": "Echocardiographic diagnosis between pericardic constriction and restrictive cardiomyopathy"
+					},
+					{
+						"label": "diastolicFunction",
+						"name": "Diastolic function",
+						"detail": "Echocardiographic assesment of diastolic function and filling pressures"
+					},
+					{
+						"label": "haemodynamics",
+						"name": "Haemodynamics",
+						"detail": "Usual calculations in right heart catheterization and pulmonary hypertension classification"
+					},
+					{
+						"label": "phhfGroup",
+						"name": "PH-HFpEF Group",
+						"detail": "Classification of pulmonary hypertension in HFpEF"
+					},
+					{
+						"label": "pulmonaryHypertensionProbability",
+						"name": "Probability of PH",
+						"detail": "Echocardiographic probability of pulmonary hypertension"
+					},
+					{
+						"label": "qualify",
+						"name": "QUALIFY",
+						"detail": "Adherence to guideline-recommended therapy in heart failure with reduced EF"
+					}
+				]
+			},
+			{
+				"label": "cardiacSurgery",
+				"name": "Cardiac surgery",
+				"scores": [
+					{
+						"label": "sts",
+						"name": "STS score",
+						"detail": "Morbi-mortality score in cardiac surgery"
+					}
+				]
+			},
+			{
+				"label": "pulmonaryEmbolism",
+				"name": "Pulmonary embolism",
+				"scores": [
+					{
+						"label": "geneva",
+						"name": "Geneva",
+						"detail": "Clinical probability of pulmonary embolism"
+					},
+					{
+						"label": "pesi",
+						"name": "PESI",
+						"detail": "Clinical assesment of severity of a pulmonary embolism"
+					},
+					{
+						"label": "wells",
+						"name": "Wells",
+						"detail": "Clinical probability of pulmonary embolism"
+					}
+				]
+			},
+			{
+				"label": "endocarditis",
+				"name": "Infective endocarditis",
+				"scores": [
+					{
+						"label": "dukesCriteria",
+						"name": "Duke's criteria",
+						"detail": "Criteria for the diagnosis of infective endocarditis"
+					}
+				]
+			},
+			{
+				"label": "calculations",
+				"name": "Calculations",
+				"scores": [
+					{
+						"label": "bmi",
+						"name": "BMI & Ideal weight",
+						"detail": "Calculates BMI and ideal weight according to the height"
+					},
+					{
+						"label": "bodySurfaceArea",
+						"name": "Body surface area",
+						"detail": "Calculates body surface area according to Boyd's formula"
+					},
+					{
+						"label": "clearance",
+						"name": "Creatinine clearance",
+						"detail": "Evaluation of renal function"
+					},
+					{
+						"label": "unitConversion",
+						"name": "Unit conversion",
+						"detail": "Converts usual units in medicine"
+					},
+					{
+						"label": "ureaExcretionFraction",
+						"name": "Urea excretion fraction",
+						"detail": "Helps understanding the mechanism in acute renal failure"
+					}
+				]
+			}
+		]
+	}
+]

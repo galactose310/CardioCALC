@@ -1,0 +1,25 @@
+{
+	"favoritesPageTitle": "Favorites",
+	"favoritesPageNoFavorite": "No favorite found",
+	
+	"homePageTooltipMainMenu": "Main menu",
+	"homePageTooltipFavoritesMenu": "Favorites menu",
+	"homePageTooltipSearchpage": "Search",
+	
+	"infoTitle": "Informations",
+	"infoSubtitle": "About CardioCALC",
+	"infoDistributedBy": "Distributed by TEC MED",
+	"infoIconsFrom": "Icons : SVG Repo",
+	
+	"searchPageHintText": "Search...",
+	"searchPageNoElementFound": "No element corresponds to your search query",
+	
+	"settingsTitle": "Settings",
+	"settingsSubtitleLanguage": "Chose language",
+	"settingsMainPage": "Home page",
+	"settingsScoreListPage": "List of scores",
+	"settingsFavoritesListPage": "List of favorites",
+	"restoreSettings": "Restore default settings",
+	
+	"waitingData": "Waiting for data..."
+}

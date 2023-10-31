@@ -1,0 +1,324 @@
+﻿[
+	{
+		"locale": "fr",
+		"categories": [
+			{
+				"label": "rhythmology",
+				"name": "Rythmologie",
+				"scores": [
+					{
+						"label": "canadianSyncopeRisk",
+						"name": "Canadian Syncope Risk",
+						"detail": "canadianSyncopeRiskDetail"
+					},
+					{
+						"label": "chadsVasc",
+						"name": "chadsVasc",
+						"detail": "chadsVascDetail"
+					},
+					{
+						"label": "hasBled",
+						"name": "hasBled",
+						"detail": "hasBledDetail"
+					},
+					{
+						"label": "hcmRiskScd",
+						"name": "hcmRiskScd",
+						"detail": "hcmRiskScdDetail"
+					},
+					{
+						"label": "hemorrhages",
+						"name": "hemorrhages",
+						"detail": "hemorrhagesDetail"
+					},
+					{
+						"label": "correctedQt",
+						"name": "correctedQt",
+						"detail": "correctedQtDetail"
+					},
+					{
+						"label": "ventricularTachycardia",
+						"name": "ventricularTachycardia",
+						"detail": "ventricularTachycardiaDetail"
+					}
+				]
+			},
+			{
+				"label": "heartFailure",
+				"name": "heartFailure",
+				"scores": [
+					{
+						"label": "amyloidosis",
+						"name": "amyloidosis",
+						"detail": "amyloidosisDetail"
+					},
+					{
+						"label": "constriction",
+						"name": "constriction",
+						"detail": "constrictionDetail"
+					},
+					{
+						"label": "diastolicFunction",
+						"name": "diastolicFunction",
+						"detail": "diastolicFunctionDetail"
+					},
+					{
+						"label": "haemodynamics",
+						"name": "haemodynamics",
+						"detail": "haemodynamicsDetail"
+					},
+					{
+						"label": "phhfGroup",
+						"name": "phhfGroup",
+						"detail": "phhfGroupDetail"
+					},
+					{
+						"label": "pulmonaryHypertensionProbability",
+						"name": "pulmonaryHypertensionProbability",
+						"detail": "pulmonaryHypertensionProbabilityDetail"
+					},
+					{
+						"label": "qualify",
+						"name": "qualify",
+						"detail": "qualifyDetail"
+					}
+				]
+			},
+			{
+				"label": "cardiacSurgery",
+				"name": "cardiacSurgery",
+				"scores": [
+					{
+						"label": "sts",
+						"name": "sts",
+						"detail": "stsDetail"
+					}
+				]
+			},
+			{
+				"label": "pulmonaryEmbolism",
+				"name": "pulmonaryEmbolism",
+				"scores": [
+					{
+						"label": "geneva",
+						"name": "geneva",
+						"detail": "genevaDetail"
+					},
+					{
+						"label": "pesi",
+						"name": "pesi",
+						"detail": "pesiDetail"
+					},
+					{
+						"label": "wells",
+						"name": "wells",
+						"detail": "wellsDetail"
+					}
+				]
+			},
+			{
+				"label": "endocarditis",
+				"name": "endocarditis",
+				"scores": [
+					{
+						"label": "dukesCriteria",
+						"name": "dukesCriteria",
+						"detail": "dukesCriteriaDetail"
+					}
+				]
+			},
+			{
+				"label": "calculations",
+				"name": "calculations",
+				"scores": [
+					{
+						"label": "bmi",
+						"name": "bmi",
+						"detail": "bmiDetail"
+					},
+					{
+						"label": "bodySurfaceArea",
+						"name": "bodySurfaceArea",
+						"detail": "bodySurfaceAreaDetail"
+					},
+					{
+						"label": "clearance",
+						"name": "clearance",
+						"detail": "clearanceDetail"
+					},
+					{
+						"label": "unitConversion",
+						"name": "unitConversion",
+						"detail": "unitConversionDetail"
+					},
+					{
+						"label": "ureaExcretionFraction",
+						"name": "ureaExcretionFraction",
+						"detail": "ureaExcretionFractionDetail"
+					}
+				]
+			}
+		]
+	},
+	{
+		"locale": "en",
+		"categories": [
+			{
+				"label": "rhythmology",
+				"name": "Rhythmology",
+				"scores": [
+					{
+						"label": "canadianSyncopeRisk",
+						"name": "canadianSyncopeRisk",
+						"detail": "canadianSyncopeRiskDetail"
+					},
+					{
+						"label": "chadsVasc",
+						"name": "chadsVasc",
+						"detail": "chadsVascDetail"
+					},
+					{
+						"label": "hasBled",
+						"name": "hasBled",
+						"detail": "hasBledDetail"
+					},
+					{
+						"label": "hcmRiskScd",
+						"name": "hcmRiskScd",
+						"detail": "hcmRiskScdDetail"
+					},
+					{
+						"label": "hemorrhages",
+						"name": "hemorrhages",
+						"detail": "hemorrhagesDetail"
+					},
+					{
+						"label": "correctedQt",
+						"name": "correctedQt",
+						"detail": "correctedQtDetail"
+					},
+					{
+						"label": "ventricularTachycardia",
+						"name": "ventricularTachycardia",
+						"detail": "ventricularTachycardiaDetail"
+					}
+				]
+			},
+			{
+				"label": "heartFailure",
+				"name": "heartFailure",
+				"scores": [
+					{
+						"label": "amyloidosis",
+						"name": "amyloidosis",
+						"detail": "amyloidosisDetail"
+					},
+					{
+						"label": "constriction",
+						"name": "constriction",
+						"detail": "constrictionDetail"
+					},
+					{
+						"label": "diastolicFunction",
+						"name": "diastolicFunction",
+						"detail": "diastolicFunctionDetail"
+					},
+					{
+						"label": "haemodynamics",
+						"name": "haemodynamics",
+						"detail": "haemodynamicsDetail"
+					},
+					{
+						"label": "phhfGroup",
+						"name": "phhfGroup",
+						"detail": "phhfGroupDetail"
+					},
+					{
+						"label": "pulmonaryHypertensionProbability",
+						"name": "pulmonaryHypertensionProbability",
+						"detail": "pulmonaryHypertensionProbabilityDetail"
+					},
+					{
+						"label": "qualify",
+						"name": "qualify",
+						"detail": "qualifyDetail"
+					}
+				]
+			},
+			{
+				"label": "cardiacSurgery",
+				"name": "cardiacSurgery",
+				"scores": [
+					{
+						"label": "sts",
+						"name": "sts",
+						"detail": "stsDetail"
+					}
+				]
+			},
+			{
+				"label": "pulmonaryEmbolism",
+				"name": "pulmonaryEmbolism",
+				"scores": [
+					{
+						"label": "geneva",
+						"name": "geneva",
+						"detail": "genevaDetail"
+					},
+					{
+						"label": "pesi",
+						"name": "pesi",
+						"detail": "pesiDetail"
+					},
+					{
+						"label": "wells",
+						"name": "wells",
+						"detail": "wellsDetail"
+					}
+				]
+			},
+			{
+				"label": "endocarditis",
+				"name": "endocarditis",
+				"scores": [
+					{
+						"label": "dukesCriteria",
+						"name": "dukesCriteria",
+						"detail": "dukesCriteriaDetail"
+					}
+				]
+			},
+			{
+				"label": "calculations",
+				"name": "calculations",
+				"scores": [
+					{
+						"label": "bmi",
+						"name": "bmi",
+						"detail": "bmiDetail"
+					},
+					{
+						"label": "bodySurfaceArea",
+						"name": "bodySurfaceArea",
+						"detail": "bodySurfaceAreaDetail"
+					},
+					{
+						"label": "clearance",
+						"name": "clearance",
+						"detail": "clearanceDetail"
+					},
+					{
+						"label": "unitConversion",
+						"name": "unitConversion",
+						"detail": "unitConversionDetail"
+					},
+					{
+						"label": "ureaExcretionFraction",
+						"name": "ureaExcretionFraction",
+						"detail": "ureaExcretionFractionDetail"
+					}
+				]
+			}
+		]
+	}
+]
