@@ -51,7 +51,7 @@ class Formulas
             case IntervalUnit.ms: return interval;
             case IntervalUnit.mm25: return interval * 40;
             case IntervalUnit.mm50: return interval * 20;
-            default: return interval;
+            default: throw Exception("convertInMilliseconds requires adequate unit");
         }
     }
 }

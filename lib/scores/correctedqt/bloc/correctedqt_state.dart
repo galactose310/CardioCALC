@@ -30,7 +30,7 @@ class CorrectedQTState extends Equatable
 	{
 		if(!this.isValid) return null;
 		
-		if(!this.wideQRS && this.method == CorrectionMethod.heartRate) return CorrectedQTScore.fromHeartRate(
+		if(!this.wideQRS && this.method == CorrectionMethod.heartRate) return CorrectedQTScore(
 			qtinterval: this.qtinterval!,
 			qtIntervalUnit: qtIntervalUnit,
 			heartRate: this.heartRate!
@@ -43,7 +43,7 @@ class CorrectedQTState extends Equatable
 			rrIntervalUnit: rrIntervalUnit
 		);
 		
-		if(this.wideQRS && this.method == CorrectionMethod.heartRate) return CorrectedQTScore.fromHeartRateWideQrs(
+		if(this.wideQRS && this.method == CorrectionMethod.heartRate) return CorrectedQTScoreWideQRS(
 			qtinterval: this.qtinterval!,
 			qtIntervalUnit: qtIntervalUnit,
 			heartRate: this.heartRate!,
@@ -51,7 +51,7 @@ class CorrectedQTState extends Equatable
 			female: this.female
 		);
 		
-		if(this.wideQRS && this.method == CorrectionMethod.rrInterval) return CorrectedQTScore.fromIntervalWideQrs(
+		if(this.wideQRS && this.method == CorrectionMethod.rrInterval) return CorrectedQTScoreWideQRS.fromInterval(
 			qtinterval: this.qtinterval!,
 			qtIntervalUnit: qtIntervalUnit,
 			rrinterval: this.rrinterval!,
