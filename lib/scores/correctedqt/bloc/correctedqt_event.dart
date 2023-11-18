@@ -24,6 +24,14 @@ class QtIntervalUnitChanged extends CorrectedQTEvent
 	List<Object> get props => [qtIntervalUnit];
 }
 
+class CorrectionMethodChanged extends CorrectedQTEvent
+{
+	const CorrectionMethodChanged({required this.method});
+	final CorrectionMethod method;
+	@override
+	List<Object> get props => [method];
+}
+
 class HeartRateChanged extends CorrectedQTEvent
 {
 	const HeartRateChanged({required this.heartRate});

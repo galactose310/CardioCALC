@@ -43,6 +43,13 @@ class Helper extends StatelessWidget
 					duration: const Duration(milliseconds: 200),
 					child: !visibility.data! ? Container(height: 0) : Container(
 						margin: const EdgeInsets.only(bottom: 8),
+						decoration: ShapeDecoration(
+							color: Theme.of(context).colorScheme.primary,
+							shape: const MessageBorder(),
+							shadows: [
+								BoxShadow(color: Theme.of(context).colorScheme.shadow, blurRadius: 4.0, offset: const Offset(1, 1)),
+							]
+						),
 						child: ListTile(
 							title: Text(
 								this.text,
@@ -56,14 +63,7 @@ class Helper extends StatelessWidget
 								),
 								onPressed: () => this.visibilitySink.add(false)
 							)
-						),
-						decoration: ShapeDecoration(
-							color: Theme.of(context).colorScheme.primary,
-							shape: const MessageBorder(),
-							shadows: [
-								BoxShadow(color: Theme.of(context).colorScheme.shadow, blurRadius: 4.0, offset: const Offset(1, 1)),
-							]
-						),
+						)
 					)
 				);
 			}

@@ -77,14 +77,14 @@ class _InfoPageState extends State<InfoPage>
 							)
 						),
 						Row(
+							//direction: Axis.horizontal,
 							mainAxisAlignment: MainAxisAlignment.center,
 							children: [
-								Text(
+								Flexible(child: Text(
 									AppLocalizations.of(context)!.infoAnyProblem,
 									style: Theme.of(context).textTheme.subtitle1,
-								),
-								TextButton(
-									child: Text(AppLocalizations.of(context)!.infoContactUs),
+								)),
+								Flexible(child: TextButton(
 									style: TextButton.styleFrom(
 										textStyle: Theme.of(context).textTheme.subtitle1?.copyWith(
 											decoration: TextDecoration.underline
@@ -92,7 +92,8 @@ class _InfoPageState extends State<InfoPage>
 										primary: Theme.of(context).extension<CardioCalcColors>()!.hyperlinkColor
 									),
 									onPressed: () => launchUrl(Uri(scheme: "mailto", path: "cardiocalc@outlook.com")),
-								)
+									child: Text(AppLocalizations.of(context)!.infoContactUs),
+								))
 							]
 						)
 					]
@@ -149,11 +150,15 @@ class InfoTile extends StatelessWidget
 		columnChildren.add(
 			Row(
 				children: [
-					SizedBox(child: leading, width: leadingWidth),
-					Padding(
+					SizedBox(width: leadingWidth, child: leading),
+					Flexible(child: Padding(
 						padding: EdgeInsets.all(colPadding),
-						child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: rowChildren)
-					),
+						child: Column(
+							crossAxisAlignment: CrossAxisAlignment.start,
+							mainAxisSize: MainAxisSize.min,
+							children: rowChildren
+						)
+					)),
 				],
 			)
 		);

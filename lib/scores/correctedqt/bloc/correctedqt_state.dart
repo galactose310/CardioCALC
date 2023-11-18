@@ -7,7 +7,7 @@ class CorrectedQTState extends Equatable
 	final int? qtinterval;
 	final IntervalUnit qtIntervalUnit;
 	
-	final CorrectionMethod method; /// C'EST CA QU'IL FAUT REVOIR ++++++
+	final CorrectionMethod method;
 	
 	final int? heartRate;
 	final int? rrinterval;

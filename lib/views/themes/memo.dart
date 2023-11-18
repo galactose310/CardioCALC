@@ -109,6 +109,20 @@ class MemoTheme
 				inactiveTrackColor: const Color(0xffe9e9e9)
 			),
 			
+			segmentedButtonTheme: SegmentedButtonThemeData(
+				style: ButtonStyle(
+					//padding: MaterialStateProperty.all(const EdgeInsets.only(top: 18, bottom: 18, left: 10, right: 20)),
+					//padding: MaterialStateProperty.all(const EdgeInsets.only(top: 18, bottom: 18, left: 10, right: 20)),
+					backgroundColor: MaterialStateProperty.resolveWith<Color>(
+						(states)
+						{
+							if(states.contains(MaterialState.selected)) return colorScheme.primary;
+							else return const Color(0xfff9f9f9);
+						}
+					),
+				),
+			),
+			
 			/*
 			radioTheme: RadioThemeData(
 				fillColor: MaterialStateProperty.resolveWith(

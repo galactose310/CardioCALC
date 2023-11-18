@@ -9,6 +9,7 @@ import 'package:cardiocalc/services/applocalizations.dart';
 import 'package:cardiocalc/views/themes/extensions/cardiocalc_colors.dart';
 import 'package:cardiocalc/models/score.dart';
 
+part 'formtiles/segmentedbuttontile.dart';
 part 'formtiles/slidertile.dart';
 part 'formtiles/switchtile.dart';
 part 'formtiles/switch_helper.dart';

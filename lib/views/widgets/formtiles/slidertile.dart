@@ -42,12 +42,12 @@ class SliderTile extends StatelessWidget
 					Chip(
 						label: Container(
 							alignment: Alignment.center,
+							width: 20,
 							child: Text(
 								this.value.round().toString(),
 								overflow: TextOverflow.visible,
 								textAlign: TextAlign.center,
 							),
-							width: 20
 						)
 					)
 				]

@@ -34,7 +34,7 @@ class _SwitchTileState extends State<SwitchTile>
 		List<Widget> rowChildren = <Widget>[];
 		List<Widget> columnChildren = <Widget>[];
 		
-		rowChildren.add(Text(widget.title));
+		rowChildren.add(Flexible(child: Text(widget.title)));
 		
 		if(widget.helper != null)
 		{

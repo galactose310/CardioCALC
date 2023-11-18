@@ -1,20 +1,26 @@
 part of '../phhfgroup_view.dart';
 
-class AnimatedLVMassForm extends StatelessWidget
+class AnimatedLVMassForm extends StatefulWidget
 {
 	const AnimatedLVMassForm({Key? key}) : super(key: key);
+	
+	@override
+	State<AnimatedLVMassForm> createState() => new AnimatedLVMassFormState();
+}
+
+class AnimatedLVMassFormState extends State<AnimatedLVMassForm>
+{
+	final TextEditingController lvmassController = new TextEditingController();
+	final TextEditingController septumController = new TextEditingController();
+	final TextEditingController lvdiamController = new TextEditingController();
+	final TextEditingController lvwallController = new TextEditingController();
+	final TextEditingController heightController = new TextEditingController();
+	final TextEditingController weightController = new TextEditingController();
 	
 	@override
 	Widget build(BuildContext context)
 	{
 		var bloc = context.read<PhhfGroupBloc>();
-		
-		TextEditingController lvmassController = new TextEditingController();
-		TextEditingController septumController = new TextEditingController();
-		TextEditingController lvdiamController = new TextEditingController();
-		TextEditingController lvwallController = new TextEditingController();
-		TextEditingController heightController = new TextEditingController();
-		TextEditingController weightController = new TextEditingController();
 		
 		lvmassController.addListener(() => bloc.add(LVMassChanged(lvmass: lvmassController.text)));
 		septumController.addListener(() => bloc.add(SeptumChanged(septum: septumController.text)));
@@ -74,5 +80,17 @@ class AnimatedLVMassForm extends StatelessWidget
 				);
 			}
 		);
+	}
+	
+	@override
+	void dispose()
+	{
+		super.dispose();
+		this.heightController.dispose();
+		this.lvdiamController.dispose();
+		this.lvmassController.dispose();
+		this.lvwallController.dispose();
+		this.septumController.dispose();
+		this.weightController.dispose();
 	}
 }

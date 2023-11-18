@@ -34,13 +34,11 @@ class CorrectedQTScore
 	
 	/// Framingham in case of narrow QRS
 	/// 
-	/// Framingham formula : QTc = QTm + 0,154 * [1-RR].
+	/// Framingham formula : QTc = QTm + 0,154 * [1-RR] (in second so 1000-RR using milliseconds)
 	int formula()
 	{
-		
-		
 		return 	(Formulas.convertInMilliseconds(interval: this.qtinterval, unit: this.qtIntervalUnit) +
-				(0.154 * (1 - Formulas.convertInMilliseconds(interval: this.rrinterval, unit: this.rrIntervalUnit)))).round();
+				(0.154 * (1000 - Formulas.convertInMilliseconds(interval: this.rrinterval, unit: this.rrIntervalUnit)))).round();
 	}
 	
 	/// Returns HR in bpm from an interval giving its unit
@@ -72,11 +70,7 @@ class CorrectedQTScoreWideQRS extends CorrectedQTScore
 		required super.heartRate,
 		required this.qrsinterval,
 		required this.female
-	})
-	{
-		this.rrIntervalUnit = IntervalUnit.ms;
-		this.rrinterval = this.intervalFromHeartRate();
-	}
+	}) : super();
 	
 	CorrectedQTScoreWideQRS.fromInterval({
 		required super.qtinterval,
@@ -85,10 +79,7 @@ class CorrectedQTScoreWideQRS extends CorrectedQTScore
 		required super.rrIntervalUnit,
 		required this.qrsinterval,
 		required this.female
-	}) : super.fromInterval()
-	{
-		this.heartRate = this.heartRateFromInterval();
-	}
+	}) : super.fromInterval();
 	
 	/// Rautaharju in case of wide QRS
 	/// 

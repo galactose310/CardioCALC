@@ -13,9 +13,10 @@ class CorrectedQTBloc extends Bloc<CorrectedQTEvent, CorrectedQTState>
 	{
 		on<QtIntervalChanged>(_mapQtIntervalChangedToState);
 		on<QtIntervalUnitChanged>(_mapQtIntervalUnitChangedToState);
+		on<CorrectionMethodChanged>(_mapCorrectionMethodChangedToState);
 		on<HeartRateChanged>(_mapHeartRateChangedToState);
 		on<RrIntervalChanged>(_mapRrIntervalChangedToState);
-		//on<RrIntervalUnitChanged>(_mapRrIntervalUnitChangedToState);
+		on<RrIntervalUnitChanged>(_mapRrIntervalUnitChangedToState);
 		on<WideQRSToggled>(_mapWideQRSToggledToState);
 		on<QrsIntervalChanged>(_mapQrsIntervalChangedToState);
 		on<FemaleToggled>(_mapFemaleToggledToState);
@@ -30,6 +31,9 @@ class CorrectedQTBloc extends Bloc<CorrectedQTEvent, CorrectedQTState>
 	void _mapQtIntervalUnitChangedToState(QtIntervalUnitChanged event, Emitter<CorrectedQTState> emit)
 		=> emit(this.state.copyWith(qtIntervalUnit: event.qtIntervalUnit));
 	
+	void _mapCorrectionMethodChangedToState(CorrectionMethodChanged event, Emitter<CorrectedQTState> emit)
+		=> emit(this.state.copyWith(method: event.method));
+	
 	void _mapHeartRateChangedToState(HeartRateChanged event, Emitter<CorrectedQTState> emit)
 	{
 		int? heartRate = int.tryParse(event.heartRate);
@@ -42,8 +46,8 @@ class CorrectedQTBloc extends Bloc<CorrectedQTEvent, CorrectedQTState>
 		emit(this.state.copyWith(rrinterval: rrinterval, updateRrInterval: true));
 	}
 	
-	//void _mapRrIntervalUnitChangedToState(RrIntervalUnitChanged event, Emitter<CorrectedQTState> emit)
-	//	=> emit(this.state.copyWith(rrIntervalUnit: event.rrIntervalUnit));
+	void _mapRrIntervalUnitChangedToState(RrIntervalUnitChanged event, Emitter<CorrectedQTState> emit)
+		=> emit(this.state.copyWith(rrIntervalUnit: event.rrIntervalUnit));
 	
 	void _mapWideQRSToggledToState(WideQRSToggled event, Emitter<CorrectedQTState> emit)
 		=> emit(this.state.copyWith(wideQRS: event.wideQRS));
