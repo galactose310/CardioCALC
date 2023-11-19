@@ -67,6 +67,21 @@ class CorrectedQTViewState extends State<CorrectedQTView>
 						break;
 				}
 				
+				String qrsIntervalUnit;
+				
+				switch(state.qrsIntervalUnit)
+				{
+					case IntervalUnit.ms:
+						qrsIntervalUnit = "ms";
+						break;
+					case IntervalUnit.mm25:
+						qrsIntervalUnit = "mm/25";
+						break;
+					case IntervalUnit.mm50:
+						qrsIntervalUnit = "mm/50";
+						break;
+				}
+				
 				Widget hrOrIntervalSwitcher;
 				
 				if(state.method == CorrectionMethod.heartRate) hrOrIntervalSwitcher = TextFieldTile(
@@ -113,11 +128,30 @@ class CorrectedQTViewState extends State<CorrectedQTView>
 				if(state.wideQRS) wideQrsSwitcher = Column(children: [
 					TextFieldTile(
 						title: AppLocalizations.of(context)!.qrsDuration,
-						unit: "ms",
+						unit: qrsIntervalUnit,
 						controller: qrsintervalController,
 						textInputAction: TextInputAction.done
 					),
-					
+					ListTile(
+						trailing: DropdownButton<IntervalUnit>(
+							value: state.qrsIntervalUnit,
+							items: const [
+								DropdownMenuItem<IntervalUnit>(
+									value: IntervalUnit.ms,
+									child: Text("ms")
+								),
+								DropdownMenuItem<IntervalUnit>(
+									value: IntervalUnit.mm25,
+									child: Text("mm - 25/s")
+								),
+								DropdownMenuItem<IntervalUnit>(
+									value: IntervalUnit.mm50,
+									child: Text("mm - 50/s")
+								)
+							],
+							onChanged: (value) => bloc.add(QrsIntervalUnitChanged(qrsIntervalUnit: value!))
+						)
+					),
 					SegmentedButtonTile<bool>(
 						//title: "${AppLocalizations.of(context)!.gender} :",
 						//titleBold: true,

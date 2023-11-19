@@ -72,6 +72,14 @@ class QrsIntervalChanged extends CorrectedQTEvent
 	List<Object> get props => [qrsinterval];
 }
 
+class QrsIntervalUnitChanged extends CorrectedQTEvent
+{
+	const QrsIntervalUnitChanged({required this.qrsIntervalUnit});
+	final IntervalUnit qrsIntervalUnit;
+	@override
+	List<Object> get props => [qrsIntervalUnit];
+}
+
 class FemaleToggled extends CorrectedQTEvent
 {
 	const FemaleToggled({required this.female});

@@ -19,6 +19,7 @@ class CorrectedQTBloc extends Bloc<CorrectedQTEvent, CorrectedQTState>
 		on<RrIntervalUnitChanged>(_mapRrIntervalUnitChangedToState);
 		on<WideQRSToggled>(_mapWideQRSToggledToState);
 		on<QrsIntervalChanged>(_mapQrsIntervalChangedToState);
+		on<QrsIntervalUnitChanged>(_mapQrsIntervalUnitChangedToState);
 		on<FemaleToggled>(_mapFemaleToggledToState);
 	}
 	
@@ -57,6 +58,9 @@ class CorrectedQTBloc extends Bloc<CorrectedQTEvent, CorrectedQTState>
 		int? qrsinterval = int.tryParse(event.qrsinterval);
 		emit(this.state.copyWith(qrsinterval: qrsinterval, updateQrsInterval: true));
 	}
+	
+	void _mapQrsIntervalUnitChangedToState(QrsIntervalUnitChanged event, Emitter<CorrectedQTState> emit)
+		=> emit(this.state.copyWith(qrsIntervalUnit: event.qrsIntervalUnit));
 	
 	void _mapFemaleToggledToState(FemaleToggled event, Emitter<CorrectedQTState> emit)
 		=> emit(this.state.copyWith(female: event.female));

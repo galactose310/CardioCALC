@@ -15,6 +15,7 @@ class CorrectedQTState extends Equatable
 	
 	final bool wideQRS;
 	final int? qrsinterval;
+	final IntervalUnit qrsIntervalUnit;
 	final bool female;
 	
 	bool get isValid => (
@@ -32,31 +33,33 @@ class CorrectedQTState extends Equatable
 		
 		if(!this.wideQRS && this.method == CorrectionMethod.heartRate) return CorrectedQTScore(
 			qtinterval: this.qtinterval!,
-			qtIntervalUnit: qtIntervalUnit,
+			qtIntervalUnit: this.qtIntervalUnit,
 			heartRate: this.heartRate!
 		);
 		
 		if(!this.wideQRS && this.method == CorrectionMethod.rrInterval) return CorrectedQTScore.fromInterval(
 			qtinterval: this.qtinterval!,
-			qtIntervalUnit: qtIntervalUnit,
+			qtIntervalUnit: this.qtIntervalUnit,
 			rrinterval: this.rrinterval!,
-			rrIntervalUnit: rrIntervalUnit
+			rrIntervalUnit: this.rrIntervalUnit
 		);
 		
 		if(this.wideQRS && this.method == CorrectionMethod.heartRate) return CorrectedQTScoreWideQRS(
 			qtinterval: this.qtinterval!,
-			qtIntervalUnit: qtIntervalUnit,
+			qtIntervalUnit: this.qtIntervalUnit,
 			heartRate: this.heartRate!,
 			qrsinterval: this.qrsinterval!,
+			qrsIntervalUnit: this.qrsIntervalUnit,
 			female: this.female
 		);
 		
 		if(this.wideQRS && this.method == CorrectionMethod.rrInterval) return CorrectedQTScoreWideQRS.fromInterval(
 			qtinterval: this.qtinterval!,
-			qtIntervalUnit: qtIntervalUnit,
+			qtIntervalUnit: this.qtIntervalUnit,
 			rrinterval: this.rrinterval!,
 			rrIntervalUnit: rrIntervalUnit,
 			qrsinterval: this.qrsinterval!,
+			qrsIntervalUnit: this.qrsIntervalUnit,
 			female: this.female
 		);
 		
@@ -72,12 +75,13 @@ class CorrectedQTState extends Equatable
 		this.rrIntervalUnit = IntervalUnit.ms,
 		this.wideQRS = false,
 		this.qrsinterval,
+		this.qrsIntervalUnit = IntervalUnit.ms,
 		this.female = false
 	});
 	
 	@override
 	List<Object?> get props =>
-		[qtinterval, qtIntervalUnit, method, heartRate, rrinterval, rrIntervalUnit, wideQRS, qrsinterval, female];
+		[qtinterval, qtIntervalUnit, method, heartRate, rrinterval, rrIntervalUnit, wideQRS, qrsinterval, qrsIntervalUnit, female];
 	
 	CorrectedQTState copyWith({
 		int? qtinterval,
@@ -91,6 +95,7 @@ class CorrectedQTState extends Equatable
 		IntervalUnit? rrIntervalUnit,
 		bool? wideQRS,
 		int? qrsinterval,
+		IntervalUnit? qrsIntervalUnit,
 		bool updateQrsInterval = false,
 		bool? female
 	})
@@ -104,6 +109,7 @@ class CorrectedQTState extends Equatable
 			rrIntervalUnit: rrIntervalUnit ?? this.rrIntervalUnit,
 			wideQRS: wideQRS ?? this.wideQRS,
 			qrsinterval: updateQrsInterval ? qrsinterval : this.qrsinterval,
+			qrsIntervalUnit: qrsIntervalUnit ?? this.qrsIntervalUnit,
 			female: female ?? this.female,
 		);
 	}

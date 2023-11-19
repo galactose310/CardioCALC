@@ -62,6 +62,7 @@ class CorrectedQTScore
 class CorrectedQTScoreWideQRS extends CorrectedQTScore
 {
 	late final int qrsinterval;
+	late final IntervalUnit qrsIntervalUnit;
 	late final bool female;
 	
 	CorrectedQTScoreWideQRS({
@@ -69,6 +70,7 @@ class CorrectedQTScoreWideQRS extends CorrectedQTScore
 		required super.qtIntervalUnit,
 		required super.heartRate,
 		required this.qrsinterval,
+		required this.qrsIntervalUnit,
 		required this.female
 	}) : super();
 	
@@ -78,6 +80,7 @@ class CorrectedQTScoreWideQRS extends CorrectedQTScore
 		required super.rrinterval,
 		required super.rrIntervalUnit,
 		required this.qrsinterval,
+		required this.qrsIntervalUnit,
 		required this.female
 	}) : super.fromInterval();
 	
@@ -90,6 +93,6 @@ class CorrectedQTScoreWideQRS extends CorrectedQTScore
 	int formula()
 	{
 		int sexcoefficient = this.female ? -34 : -22;
-		return (this.qtinterval - 155 * (60 / this.heartRate - 1) - 0.93 * (this.qrsinterval - 139) + sexcoefficient).round();
+		return (Formulas.convertInMilliseconds(interval: this.qtinterval, unit: this.qtIntervalUnit) - 155 * (60 / this.heartRate - 1) - 0.93 * (Formulas.convertInMilliseconds(interval: this.qrsinterval, unit: this.qrsIntervalUnit) - 139) + sexcoefficient).round();
 	}
 }
