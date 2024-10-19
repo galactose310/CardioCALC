@@ -6,6 +6,11 @@ import 'view/hemorrhages_view.dart';
 
 class HemorrhagesPage extends StatelessWidget
 {
+	/// Returns a BlocProvider that provides :
+	/// 
+	/// - BLoC logic for Hemorrhages state management
+	/// 
+	/// - View page for Hemorrhages implementation
 	const HemorrhagesPage({Key? key}) : super(key: key);
 	
 	@override

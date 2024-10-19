@@ -6,6 +6,11 @@ import 'view/chadsvasc_view.dart';
 
 class ChadsVascPage extends StatelessWidget
 {
+	/// Returns a BlocProvider that provides :
+	/// 
+	/// - BLoC logic for ChadsVasc state management
+	/// 
+	/// - View page for ChadsVasc implementation
 	const ChadsVascPage({Key? key}) : super(key: key);
 	
 	@override

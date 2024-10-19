@@ -6,6 +6,11 @@ import 'view/phhfgroup_view.dart';
 
 class PhhfGroupPage extends StatelessWidget
 {
+	/// Returns a BlocProvider that provides :
+	/// 
+	/// - BLoC logic for PH-HFpEF Group state management
+	/// 
+	/// - View page for PH-HFpEF Group implementation
 	const PhhfGroupPage({Key? key}) : super(key: key);
 	
 	@override

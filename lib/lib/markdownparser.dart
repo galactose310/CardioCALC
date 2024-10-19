@@ -8,6 +8,7 @@ class Markdown
 	static const String urlStartPattern = "[";
 	static const String urlIntermediatePattern = "](";
 	static const String urlStopPattern = ")";
+	static const String urlStopPatternConfusingChar = "(";
 	static const String boldPattern = "**";
 	static const String italicStarPattern = "*";
 	static const String italicUnderPattern = "_";
@@ -189,6 +190,16 @@ class Markdown
 		if (urlStartIndex < 0 || urlIntermediateIndex < urlStartIndex) return text;
 		
 		int urlStopIndex = urlIntermediateIndex + text.substring(urlIntermediateIndex).indexOf(urlStopPattern);
+		
+		int startScanForConfusingChar = urlIntermediateIndex;
+		int stopScanForConfusingChar = urlStopIndex;
+		
+		while(text.substring(startScanForConfusingChar, stopScanForConfusingChar).indexOf(urlStopPatternConfusingChar) > 0)
+		{
+			startScanForConfusingChar = urlStopIndex;
+			urlStopIndex += text.substring(urlStopIndex + 1).indexOf(urlStopPattern) + 1;
+			stopScanForConfusingChar = urlStopIndex;
+		}
 		if (urlStopIndex <= 0 || urlStopIndex < urlIntermediateIndex) return text;
 		
 		return

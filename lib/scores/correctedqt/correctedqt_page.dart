@@ -6,6 +6,11 @@ import 'view/correctedqt_view.dart';
 
 class CorrectedQTPage extends StatelessWidget
 {
+	/// Returns a BlocProvider that provides :
+	/// 
+	/// - BLoC logic for Corrected QT state management
+	/// 
+	/// - View page for Corrected QT implementation
 	const CorrectedQTPage({Key? key}) : super(key: key);
 	
 	@override

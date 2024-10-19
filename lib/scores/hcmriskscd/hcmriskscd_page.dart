@@ -6,6 +6,11 @@ import 'view/hcmriskscd_view.dart';
 
 class HcmRiskScdPage extends StatelessWidget
 {
+	/// Returns a BlocProvider that provides :
+	/// 
+	/// - BLoC logic for HCM-Risk SCD state management
+	/// 
+	/// - View page for HCM Risk SCD implementation
 	const HcmRiskScdPage({Key? key}) : super(key: key);
 	
 	@override

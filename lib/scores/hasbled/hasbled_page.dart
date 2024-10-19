@@ -6,6 +6,11 @@ import 'view/hasbled_view.dart';
 
 class HasBledPage extends StatelessWidget
 {
+	/// Returns a BlocProvider that provides :
+	/// 
+	/// - BLoC logic for HasBled state management
+	/// 
+	/// - View page for HasBled implementation
 	const HasBledPage({Key? key}) : super(key: key);
 	
 	@override

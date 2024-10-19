@@ -4,8 +4,14 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'bloc/canadiansyncope_bloc.dart';
 import 'view/canadiansyncope_view.dart';
 
+
 class CanadianSyncopePage extends StatelessWidget
 {
+	/// Returns a BlocProvider that provides :
+	/// 
+	/// - BLoC logic for CanadianSyncope state management
+	/// 
+	/// - View page for CanadianSyncopeScore implementation
 	const CanadianSyncopePage({Key? key}) : super(key: key);
 	
 	@override
