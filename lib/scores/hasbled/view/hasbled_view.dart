@@ -1,3 +1,4 @@
+/// The View used in BlocBuilder from HasBledPage
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -8,8 +9,9 @@ import '../bloc/hasbled_bloc.dart';
 
 class HasBledView extends StatelessWidget
 {
+	/// The View used in BlocBuilder from HasBledPage
 	const HasBledView({Key? key}) : super(key: key);
-		
+	
 	@override
 	Widget build(BuildContext context)
 	{

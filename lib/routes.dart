@@ -7,6 +7,7 @@ import 'scores/hcmriskscd/hcmriskscd_page.dart';
 import 'scores/hemorrhages/hemorrhages_page.dart';
 import 'scores/phhfgroup/phhfgroup_page.dart';
 import 'scores/canadiansyncope/canadiansyncope_page.dart';
+import 'scores/ventriculartachycardia/ventriculartachycardia_page.dart';
 
 import 'views/mainpages/homepage.dart';
 import 'views/mainpages/infopage.dart';
@@ -29,7 +30,7 @@ class Routes
         '/hcmRiskScd': (context) => const ScorePage(body: HcmRiskScdPage()),
         '/hemorrhages': (context) => const ScorePage(body: HemorrhagesPage()),
         '/correctedQt': (context) => const ScorePage(body: CorrectedQTPage()),
-        // '/ventricularTachycardia': (context) => const ScorePage(body: VentricularTachycardiaPage()),
+        '/ventricularTachycardia': (context) => const ScorePage(body: VentricularTachycardiaPage()),
         // '/amyloidosis': (context) => const ScorePage(body: AmyloidosisPage()),
         // '/constriction': (context) => const ScorePage(body: ConstrictionPage()),
         // '/diastolicFunction': (context) => const ScorePage(body: DiastolicFunctionPage()),

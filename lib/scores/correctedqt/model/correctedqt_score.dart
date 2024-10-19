@@ -1,4 +1,4 @@
-import 'package:cardiocalc/models/formulas.dart';
+import 'package:cardiocalc/lib/formulas.dart';
 
 class CorrectedQTScore
 {

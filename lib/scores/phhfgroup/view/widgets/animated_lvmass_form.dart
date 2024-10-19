@@ -1,15 +1,19 @@
 part of '../phhfgroup_view.dart';
 
-class AnimatedLVMassForm extends StatefulWidget
-{
-	const AnimatedLVMassForm({Key? key}) : super(key: key);
+/// Builds a child form depending on the LV mass is known or not.
+/// If not, show the complete form to compute LV mass index.
+class AnimatedLVMassForm extends StatefulWidget {
+	final PhhfGroupViewModel viewmodel;
+	const AnimatedLVMassForm(this.viewmodel, {super.key});
 	
 	@override
 	State<AnimatedLVMassForm> createState() => new AnimatedLVMassFormState();
 }
 
-class AnimatedLVMassFormState extends State<AnimatedLVMassForm>
-{
+class AnimatedLVMassFormState extends State<AnimatedLVMassForm> {
+	// StatefulWidget is mandatory to correctly set and dispose those text controllers.
+	// If not, user input disappears when switching between the forms.
+	// In the same way, main child (TextFieldTile or Column): must have a defined ValueKey.
 	final TextEditingController lvmassController = new TextEditingController();
 	final TextEditingController septumController = new TextEditingController();
 	final TextEditingController lvdiamController = new TextEditingController();
@@ -18,57 +22,67 @@ class AnimatedLVMassFormState extends State<AnimatedLVMassForm>
 	final TextEditingController weightController = new TextEditingController();
 	
 	@override
-	Widget build(BuildContext context)
-	{
-		var bloc = context.read<PhhfGroupBloc>();
+	Widget build(BuildContext context) {
+		PhhfGroupViewModel viewmodel = widget.viewmodel;
 		
-		lvmassController.addListener(() => bloc.add(LVMassChanged(lvmass: lvmassController.text)));
-		septumController.addListener(() => bloc.add(SeptumChanged(septum: septumController.text)));
-		lvdiamController.addListener(() => bloc.add(LVDiamChanged(lvdiam: lvdiamController.text)));
-		lvwallController.addListener(() => bloc.add(LVWallChanged(lvwall: lvwallController.text)));
-		heightController.addListener(() => bloc.add(HeightChanged(height: heightController.text)));
-		weightController.addListener(() => bloc.add(WeightChanged(weight: weightController.text)));
+		lvmassController.addListener(() => viewmodel.onIndexedLvMassChanged(lvmassController.text));
+		septumController.addListener(() => viewmodel.onSeptumChanged(septumController.text));
+		lvdiamController.addListener(() => viewmodel.onLvDiamChanged(lvdiamController.text));
+		lvwallController.addListener(() => viewmodel.onLvWallChanged(lvwallController.text));
+		heightController.addListener(() => viewmodel.onHeightChanged(heightController.text));
+		weightController.addListener(() => viewmodel.onWeightChanged(weightController.text));
 		
-		return BlocBuilder<PhhfGroupBloc, PhhfGroupState>(
-			builder: (context, state)
-			{
+		return ListenableBuilder(
+			listenable: viewmodel,
+			builder: (context, state) {
 				Widget child;
 				
-				if(state.lvmassIsKnown) child = TextFieldTile(
-					key: ValueKey(state.lvmassIsKnown),
+				if(viewmodel.lvmassIsKnown) child = TextFieldTile(
+					key: ValueKey(viewmodel.lvmassIsKnown),
 					controller: lvmassController,
 					title: AppLocalizations.of(context)!.lvMass,
-					unit: "g/m²",
+					unit: viewmodel.indexedLvMassUnit.name,
+					isValid: viewmodel.indexedLvMass?.isValid ?? true,
 					textInputAction: TextInputAction.done
 				);
 				
 				else child = Column(
-					key: ValueKey(state.lvmassIsKnown),
+					key: ValueKey(viewmodel.lvmassIsKnown),
 					children: [
 						TextFieldTile(
 							title: AppLocalizations.of(context)!.septum,
 							controller: septumController,
-							unit: "mm",
+							unit: viewmodel.septumUnit.name,
+							isValid: viewmodel.septum?.isValid ?? true,
+							isUnusual: viewmodel.septum?.isUnusual ?? false
 						),
 						TextFieldTile(
 							title: AppLocalizations.of(context)!.lvdiam,
 							controller: lvdiamController,
-							unit: "mm",
+							unit: viewmodel.lvdiamUnit.name,
+							isValid: viewmodel.lvdiam?.isValid ?? true,
+							isUnusual: viewmodel.lvdiam?.isUnusual ?? false
 						),
 						TextFieldTile(
 							title: AppLocalizations.of(context)!.lvwall,
 							controller: lvwallController,
-							unit: "mm",
+							unit: viewmodel.lvwallUnit.name,
+							isValid: viewmodel.lvwall?.isValid ?? true,
+							isUnusual: viewmodel.lvwall?.isUnusual ?? false
 						),
 						TextFieldTile(
 							title: AppLocalizations.of(context)!.height,
 							controller: heightController,
-							unit: "cm",
+							unit: viewmodel.heightUnit.name,
+							isValid: viewmodel.height?.isValid ?? true,
+							isUnusual: viewmodel.height?.isUnusual ?? false
 						),
 						TextFieldTile(
 							title: AppLocalizations.of(context)!.weight,
 							controller: weightController,
-							unit: "kg",
+							unit: viewmodel.weightUnit.name,
+							isValid: viewmodel.weight?.isValid ?? true,
+							isUnusual: viewmodel.weight?.isUnusual ?? false,
 							textInputAction: TextInputAction.done,
 						)
 					]

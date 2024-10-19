@@ -1,8 +1,7 @@
-import 'package:cardiocalc/models/favorites.dart';
-import 'package:cardiocalc/lib/string.dart';
+import 'package:cardiocalc/interfaces/favoritable.dart';
+import 'package:cardiocalc/extensions/string.dart';
 
-class Score extends Comparable<Score> implements Favoritable
-{
+class Score implements Comparable<Score>, Favoritable {
 	@override
 	String label;
 	@override
@@ -13,8 +12,7 @@ class Score extends Comparable<Score> implements Favoritable
 	
 	Score({required this.label, required this.name, required this.detail, this.isFavorite = false});
 	
-	factory Score.fromJson(Map<String, dynamic> parsedJson)
-	{
+	factory Score.fromJson(Map<String, dynamic> parsedJson) {
 		return Score(
 			label: parsedJson["label"] as String,
 			name: parsedJson["name"] as String,
@@ -26,8 +24,7 @@ class Score extends Comparable<Score> implements Favoritable
 	int compareTo(Score other) => this.name.removeDiacritics().toLowerCase().compareTo(other.name.removeDiacritics().toLowerCase());
 }
 
-class Category implements Comparable<Category>
-{
+class Category implements Comparable<Category> {
 	String label;
 	String name;
 	List<Score> scores = [];
@@ -36,8 +33,7 @@ class Category implements Comparable<Category>
 	
 	Category.fill({required this.label, required this.name, required this.scores});
 	
-	factory Category.fromJson(Map<String, dynamic> parsedJson)
-	{
+	factory Category.fromJson(Map<String, dynamic> parsedJson) {
 		var list = parsedJson["scores"] as List;
 		List<Score> scoreList = list.map((i) => Score.fromJson(i)).toList();
 		

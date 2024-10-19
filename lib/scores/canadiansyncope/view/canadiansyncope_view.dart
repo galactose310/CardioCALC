@@ -1,3 +1,4 @@
+/// The View used in BlocBuilder from CanadianSyncopePage
 import 'package:cardiocalc/scores/canadiansyncope/model/canadiansyncope_score.dart';
 import 'package:cardiocalc/services/applocalizations.dart';
 import 'package:cardiocalc/views/widgets/widgets.dart';
@@ -8,6 +9,7 @@ import '../bloc/canadiansyncope_bloc.dart';
 
 class CanadianSyncopeView extends StatelessWidget
 {
+	/// The View used in BlocBuilder from CanadianSyncopePage
 	const CanadianSyncopeView({Key? key}) : super(key: key);
 		
 	@override

@@ -3,7 +3,7 @@ import 'package:cardiocalc/providers/blocprovider.dart';
 import 'package:cardiocalc/blocs/scoresbloc.dart';
 import 'package:cardiocalc/views/widgets/widgets.dart';
 import 'package:cardiocalc/models/score.dart';
-import 'package:cardiocalc/lib/string.dart';
+import 'package:cardiocalc/extensions/string.dart';
 import 'package:cardiocalc/services/applocalizations.dart';
 
 class SearchPage extends StatefulWidget

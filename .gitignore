@@ -30,6 +30,7 @@
 .pub-cache/
 .pub/
 /build/
+.regex_memo.txt
 
 # Web related
 lib/generated_plugin_registrant.dart

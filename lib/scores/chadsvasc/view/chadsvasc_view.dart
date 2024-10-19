@@ -1,3 +1,4 @@
+/// The View used in BlocBuilder from ChadsVascPage
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -8,6 +9,7 @@ import '../bloc/chadsvasc_bloc.dart';
 
 class ChadsVascView extends StatelessWidget
 {
+	/// The View used in BlocBuilder from ChadsVascPage
 	const ChadsVascView({Key? key}) : super(key: key);
 		
 	@override

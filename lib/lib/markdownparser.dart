@@ -42,9 +42,7 @@ class Markdown
 	
 	static Set<String> get authorizedFlags => <String> { linkFlag, urlFlag, boldFlag, italicFlag, boldAnditalicFlag, underlineFlag };
 	
-	/*
-		* Parse a pre-formatted text (after parsing Markdown to Markup) to a list of TextSpan
-	*/
+	/// Parse a pre-formatted text (after parsing Markdown to Markup) to a list of TextSpan
 	static List<TextSpan> parse({required String text, Color? hyperlinkTextColor = Colors.blueAccent})
 	{
 		List<TextSpan> spanList = <TextSpan>[];

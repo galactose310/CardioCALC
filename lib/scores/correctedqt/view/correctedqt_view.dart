@@ -1,4 +1,5 @@
-import 'package:cardiocalc/models/formulas.dart';
+/// The View used in BlocBuilder from CorrectedQTPage
+import 'package:cardiocalc/lib/formulas.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -9,6 +10,7 @@ import '../bloc/correctedqt_bloc.dart';
 
 class CorrectedQTView extends StatefulWidget
 {
+	/// The View used in BlocBuilder from CorrectedQTPage
 	const CorrectedQTView({Key? key}) : super(key: key);
 	
 	@override

@@ -1,62 +1,76 @@
-import 'package:cardiocalc/scores/phhfgroup/bloc/phhfgroup_bloc.dart';
+/// The View used in BlocBuilder from PhhfGroupPage
 import 'package:cardiocalc/services/applocalizations.dart';
 import 'package:cardiocalc/views/widgets/widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../model/phhfgroup_interpretation.dart';
+import '../model/phhfgroup_score.dart' show PhhfGroupInterpretation;
+import '../phhfgroup_viewmodel.dart';
 
 part 'widgets/animated_lvmass_form.dart';
 part 'widgets/animated_result.dart';
 
-class PhhfGroupView extends StatelessWidget
-{
-	const PhhfGroupView({Key? key}) : super(key: key);
-		
+abstract class PageView<T extends ChangeNotifier> extends StatelessWidget {
+	final T viewmodel;
+	
+	const PageView(this.viewmodel, {super.key});
+}
+
+class PhhfGroupView extends PageView<PhhfGroupViewModel> {
+	const PhhfGroupView(super.viewmodel, {super.key});
+
 	@override
 	Widget build(BuildContext context)
 	{
-		var bloc = context.watch<PhhfGroupBloc>();
-		
 		return Column(
 			children: [
-				SwitchTile(
-					title: AppLocalizations.of(context)!.diabetes,
-					value: bloc.state.diabetes,
-					onChanged: (value) => bloc.add(DiabetesToggled(diabetes: value))
+				ListenableBuilder(
+					listenable: viewmodel,
+					builder: (context, child) {
+						return Column(children: [
+							SwitchTile(
+								title: AppLocalizations.of(context)!.diabetes,
+								value: viewmodel.diabetes,
+								onChanged: viewmodel.onDiabetesToggled
+							),
+							
+							SwitchTile(
+								title: AppLocalizations.of(context)!.atrialFibrillation,
+								value: viewmodel.atrialFibrillation,
+								onChanged: viewmodel.onAtrialFibrillationToggled
+							),
+							
+							TextFieldTile(
+								title: AppLocalizations.of(context)!.laSurface,
+								unit: viewmodel.leftAtriumAreaUnit.name,
+								isValid: viewmodel.leftAtriumArea?.isValid ?? true,
+								isUnusual: viewmodel.leftAtriumArea?.isUnusual ?? false,
+								onChanged: viewmodel.onLeftAtriumAreaChanged
+							),
+							
+							TextFieldTile(
+								title: AppLocalizations.of(context)!.rvSurface,
+								unit: viewmodel.rightVentricleAreaUnit.name,
+								isValid: viewmodel.rightVentricleArea?.isValid ?? true,
+								isUnusual: viewmodel.rightVentricleArea?.isUnusual ?? false,
+								onChanged: viewmodel.onRightVentricleAreaChanged
+							),
+							
+							SwitchTile(
+								title: AppLocalizations.of(context)!.lvMassIsKnown,
+								value: viewmodel.lvmassIsKnown,
+								onChanged: viewmodel.onLvMassIsKnownToggled
+							)
+						]);
+					}
 				),
 				
-				SwitchTile(
-					title: AppLocalizations.of(context)!.atrialFibrillation,
-					value: bloc.state.atrialFibrillation,
-					onChanged: (value) => bloc.add(AtrialFibrillationToggled(atrialFibrillation: value)),
-				),
-				
-				TextFieldTile(
-					title: AppLocalizations.of(context)!.laSurface,
-					unit: "cm²",
-					onChanged: (value) => bloc.add(LeftAtriumAreaChanged(leftAtriumArea: value))
-				),
-				
-				TextFieldTile(
-					title: AppLocalizations.of(context)!.rvSurface,
-					unit: "cm²",
-					onChanged: (value) => bloc.add(RightVentricleAreaChanged(rightVentricleArea: value)),
-				),
-				
-				SwitchTile(
-					title: AppLocalizations.of(context)!.lvMassIsKnown,
-					value: context.read<PhhfGroupBloc>().state.lvmassIsKnown,
-					onChanged: (value) => bloc.add(LvMassKnowledgeToggled(lvmassIsKnown: value))
-				),
-				
-				const AnimatedLVMassForm(),
+				AnimatedLVMassForm(viewmodel),
 				
 				const SizedBox(height: 16),
 				const Divider(),
 				const SizedBox(height: 16),
 				
-				const AnimatedResult(),
+				AnimatedResult(viewmodel),
 				
 				const SizedBox(height: 16),
 				const Divider(),

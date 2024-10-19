@@ -1,24 +1,27 @@
 part of '../phhfgroup_view.dart';
 
-class AnimatedResult extends StatelessWidget
-{
-	const AnimatedResult({Key? key}) : super(key: key);
+/// PhhfGroup result card with animation.
+/// Also sets the text for score interpretation.
+class AnimatedResult extends PageView<PhhfGroupViewModel> {
+	const AnimatedResult(super.viewmodel, {super.key});
 	
-	static const String _invalidResultText = "";
+	static const String _invalidResultText = '';
 	
 	@override
 	Widget build(BuildContext context)
 	{
 		String resultDetail;
 		
-		return BlocBuilder<PhhfGroupBloc, PhhfGroupState>(
-			builder: (context, state)
+		return ListenableBuilder(
+			listenable: viewmodel,
+			builder: (context, child)
 			{
-				if(!state.isValid || state.interpretation == null) resultDetail = AppLocalizations.of(context)!.fillAllFields;
+				if(!viewmodel.isReadyToCalculate)
+					resultDetail = AppLocalizations.of(context)!.fillAllFields;
 				
 				else
 				{
-					switch(state.interpretation!)
+					switch(viewmodel.scoreInterpretation!)
 					{
 						case PhhfGroupInterpretation.precapillary:
 							resultDetail = AppLocalizations.of(context)!.phhfGroupInterpretationPrecapillary;
@@ -36,41 +39,9 @@ class AnimatedResult extends StatelessWidget
 				
 				return ResultCard(
 					scoreName: AppLocalizations.of(context)!.phhfGroupTitle,
-					result: (state.isValid && state.result != null) ? state.result.toString() : _invalidResultText,
+					result: viewmodel.isReadyToCalculate ? viewmodel.score!.result.toString() : _invalidResultText,
 					message: resultDetail
 				);
-				
-				/*
-				return ResultCard(
-					title: Row(
-						children: [
-							ResultCardTitlePart(text: AppLocalizations.of(context)!.phhfGroupTitle),
-							AnimatedSwitcher(
-								duration: const Duration(milliseconds: _titleAnimationDuration),
-								child: mainResultWidget,
-								transitionBuilder: (Widget child, Animation<double> animation)
-								{
-									return ScaleTransition(scale: animation, child: child);
-								},
-							)
-						]
-					),
-					content: SlidingAnimatedSwitcher(
-						child: RichText(
-							key: ValueKey(resultDetail),
-							textAlign: TextAlign.justify,
-							text: TextSpan(
-								style: Theme.of(context).textTheme.subtitle1?.copyWith(
-									color: Theme.of(context).colorScheme.onTertiaryContainer
-								),
-								children: Markdown.parse(
-									text: state.isValid ? resultDetail : AppLocalizations.of(context)!.fillAllFields
-								)
-							)
-						)
-					)
-				);
-				*/
 			}
 		);
 	}

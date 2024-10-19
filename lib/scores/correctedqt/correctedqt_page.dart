@@ -1,3 +1,6 @@
+/// Main page for CorrectedQT
+/// 
+/// Wraps BLoC logic and View in a BlocProvider
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

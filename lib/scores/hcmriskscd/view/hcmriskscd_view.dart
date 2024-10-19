@@ -1,3 +1,4 @@
+/// The View used in BlocBuilder from HcmRiskScdPage
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -9,6 +10,7 @@ import '../model/hcmriskscd_score.dart';
 
 class HcmRiskScdView extends StatelessWidget
 {
+	/// The View used in BlocBuilder from HcmRiskScdPage
 	const HcmRiskScdView({Key? key}) : super(key: key);
 		
 	@override

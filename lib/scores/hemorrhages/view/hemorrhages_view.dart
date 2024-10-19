@@ -1,3 +1,4 @@
+/// The View used in BlocBuilder from HemorrhagesPage
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -8,6 +9,7 @@ import '../bloc/hemorrhages_bloc.dart';
 
 class HemorrhagesView extends StatelessWidget
 {
+	/// The View used in BlocBuilder from HemorrhagesPage
 	const HemorrhagesView({Key? key}) : super(key: key);
 		
 	@override
